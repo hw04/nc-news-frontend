@@ -5,7 +5,6 @@ import Homepage from "./components/Homepage.jsx";
 function App() {
   return (
     <>
-      <h1>NC News</h1>
       <Homepage />
     </>
   );
