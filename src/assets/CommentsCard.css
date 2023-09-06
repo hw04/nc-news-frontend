@@ -1,15 +1,14 @@
-.comments-container {
-  margin-bottom: 50px;
+.flex-container-comments {
   text-align: center;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 100px 200px 0px 200px;
+  margin: 50px 200px 50px 200px;
   text-align: justify;
   background-color: tomato;
-  padding: 100px;
+  padding: 0px 100px 100px 100px;
   border-radius: 100px;
 }
 .comments-list {

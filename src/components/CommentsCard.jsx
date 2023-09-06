@@ -17,7 +17,7 @@ const CommentsCard = () => {
   }, []);
 
   return (
-    <div className="comments-container">
+    <div className="flex-container-comments">
       <h2>What people are saying...</h2>
       <ul className="comments-list">
         {comments.map((comment) => (

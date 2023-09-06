@@ -4,14 +4,22 @@
   font-family: "Poppins";
 }
 
-.flexbox-container-article {
+.flex-container-article {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 100px 200px 0px 200px;
+  margin: 100px 200px 50px 200px;
   text-align: justify;
   background-color: tomato;
   padding: 100px;
   border-radius: 100px;
+}
+
+.flex-image-article {
+  max-width: 80%;
+  border-radius: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }

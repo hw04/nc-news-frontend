@@ -23,10 +23,11 @@ const Homepage = () => {
           <li key={article.article_id} className="flex-item-homepage">
             <Link to={`/article/${article.article_id}`}>
               <h3>{article.title}</h3>
+              <img
+                src={article.article_img_url}
+                className="flex-image-homepage"
+              ></img>
             </Link>
-            <button className="flex-item-homepage-1">+</button>
-            {article.votes}
-            <button className="flex-item-homepage-1">-</button>
             Comments: {article.comment_count}
           </li>
         ))}

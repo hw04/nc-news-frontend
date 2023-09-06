@@ -20,11 +20,15 @@ const Article = () => {
   return (
     <>
       <Navbar />
-      <div className="flexbox-container-article">
-        <h1 className="flexbox-item-article">{article.title}</h1>
-        <img src={article.article_img_url}></img>
-        <p className="flexbox-item-article">{article.body}</p>
+      <div className="flex-container-article">
+        <h1 className="flex-item-article">{article.title}</h1>
+        <img src={article.article_img_url} className="flex-image-article"></img>
+        <p className="flex-item-article">{article.body}</p>
+        <button className="flex-item-homepage-1">+</button>
+        {article.votes}
+        <button className="flex-item-homepage-1">-</button>
       </div>
+
       <CommentsCard />
     </>
   );
