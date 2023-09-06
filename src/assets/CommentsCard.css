@@ -1,12 +1,23 @@
 .comments-container {
   margin-bottom: 50px;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 100px 200px 0px 200px;
+  text-align: justify;
+  background-color: tomato;
+  padding: 100px;
+  border-radius: 100px;
 }
 .comments-list {
   display: inline-block;
   text-align: center;
   display: table;
   margin: 0 auto;
+  padding: 0px;
 }
 
 .comments-list-item {
@@ -14,7 +25,7 @@
   margin-bottom: 20px;
   border-style: groove;
   border-radius: 20px;
-
   text-align: left;
   padding: 10px 10px 10px 20px;
+  background-color: white;
 }

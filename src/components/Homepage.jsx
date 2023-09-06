@@ -18,7 +18,7 @@ const Homepage = () => {
     <>
       <Navbar />
       <h2>Welcome to NC News™</h2>
-      <ul className="flex-container">
+      <ul className="flex-container-homepage">
         {articles.map((article) => (
           <li key={article.article_id} className="flex-item-homepage">
             <Link to={`/article/${article.article_id}`}>

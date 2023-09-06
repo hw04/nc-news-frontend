@@ -12,7 +12,7 @@ li {
   margin-bottom: 10px;
 } */
 
-.flex-container {
+.flex-container-homepage {
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -29,6 +29,7 @@ li {
   line-height: 30px;
   text-align: center;
   font-family: "Arial";
+  border-radius: 40px;
 }
 
 .flex-item-homepage-1 {

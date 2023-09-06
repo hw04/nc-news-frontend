@@ -17,20 +17,18 @@ const CommentsCard = () => {
   }, []);
 
   return (
-    <>
-      <div className="comments-container">
-        <h2>What people are saying...</h2>
-        <ul className="comments-list">
-          {comments.map((comment) => (
-            <li key={comment.comment_id} className="comments-list-item">
-              {comment.author}: {comment.body}
-            </li>
-          ))}
-        </ul>
-        Leave a comment... <input name="Write a comment" />{" "}
-        <button title="Submit">Submit</button>
-      </div>
-    </>
+    <div className="comments-container">
+      <h2>What people are saying...</h2>
+      <ul className="comments-list">
+        {comments.map((comment) => (
+          <li key={comment.comment_id} className="comments-list-item">
+            {comment.author}: {comment.body}
+          </li>
+        ))}
+      </ul>
+      Leave a comment... <input name="Write a comment" />{" "}
+      <button title="Submit">Submit</button>
+    </div>
   );
 };
 

@@ -22,8 +22,8 @@ const Article = () => {
       <div className="flexbox-container-article">
         <h1 className="flexbox-item-article">{article.title}</h1>
         <p className="flexbox-item-article">{article.body}</p>
-        <CommentsCard />
       </div>
+      <CommentsCard />
     </>
   );
 };
