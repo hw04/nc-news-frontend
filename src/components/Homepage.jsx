@@ -11,7 +11,6 @@ const Homepage = () => {
       .get("https://nc-news-czlb.onrender.com/api/articles")
       .then((response) => {
         setArticles(response.data);
-        console.log(response);
       });
   }, []);
   return (
