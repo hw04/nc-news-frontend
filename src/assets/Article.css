@@ -4,11 +4,11 @@
   font-family: "Poppins";
 }
 
-h1 {
-  text-align: center;
-}
-
-p {
+.flexbox-container-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 100px 50px 0px 50px;
   text-align: justify;
-  margin: 100px;
 }
