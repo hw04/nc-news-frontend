@@ -17,16 +17,16 @@ const Homepage = () => {
   return (
     <>
       <Navbar />
-      <h2>Home</h2>
-      <ul class="flex-container">
+      <h2>Welcome to NC News™</h2>
+      <ul className="flex-container">
         {articles.map((article) => (
-          <li key={article.article_id} class="flex-item">
+          <li key={article.article_id} className="flex-item-homepage">
             <Link to={`/article/${article.article_id}`}>
               <h3>{article.title}</h3>
             </Link>
-            <button class="flex-item-1">+</button>
+            <button className="flex-item-homepage-1">+</button>
             {article.votes}
-            <button class="flex-item-1">-</button>
+            <button className="flex-item-homepage-1">-</button>
             Comments: {article.comment_count}
           </li>
         ))}
