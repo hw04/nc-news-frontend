@@ -13,6 +13,7 @@ const Article = () => {
       .get(`https://nc-news-czlb.onrender.com/api/articles/${article_id}`)
       .then((response) => {
         setArticle(response.data);
+        console.log(response.data);
       });
   }, []);
 
@@ -21,6 +22,7 @@ const Article = () => {
       <Navbar />
       <div className="flexbox-container-article">
         <h1 className="flexbox-item-article">{article.title}</h1>
+        <img src={article.article_img_url}></img>
         <p className="flexbox-item-article">{article.body}</p>
       </div>
       <CommentsCard />
