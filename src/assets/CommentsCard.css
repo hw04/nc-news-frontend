@@ -4,21 +4,20 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: left;
   margin: 50px 200px 50px 200px;
   text-align: justify;
   background-color: tomato;
   padding: 0px 100px 100px 100px;
   border-radius: 100px;
 }
-.comments-list {
+/*.comments-list {
   display: inline-block;
   text-align: center;
   display: table;
   margin: 0 auto;
   padding: 0px;
 }
-
 .comments-list-item {
   list-style: none;
   margin-bottom: 20px;
@@ -27,4 +26,8 @@
   text-align: left;
   padding: 10px 10px 10px 20px;
   background-color: white;
+}*/
+
+.post-comment-field {
+  max-width: 90%;
 }

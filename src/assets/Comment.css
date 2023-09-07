@@ -1,0 +1,35 @@
+.comment {
+  display: flex;
+  margin-bottom: 50px;
+  padding-top: 50px;
+}
+
+.comment-image-container {
+  margin-right: -160px;
+}
+
+img {
+  max-width: 40%;
+  border-radius: 70px;
+}
+
+.comment-right-part {
+  width: 100%;
+}
+
+.comment-info {
+  display: flex;
+  margin-top: 5px;
+}
+
+.comment-author {
+  margin-right: 10px;
+  font-size: 20px;
+  color: white;
+  margin-top: -4px;
+}
+
+.comment-body {
+  font-size: 18px;
+  margin-top: 10px;
+}
