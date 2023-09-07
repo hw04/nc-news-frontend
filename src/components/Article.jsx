@@ -62,7 +62,6 @@ const Article = () => {
           </button>
         </div>
       </div>
-
       <CommentsCard />
     </>
   );
