@@ -1,6 +1,9 @@
 import "../assets/Comment.css";
+import axios from "axios";
 
-const Comment = ({ comment }) => {
+const Comment = ({ comment, loggedInUser, deleteComment }) => {
+  const canDelete = comment.author === loggedInUser;
+
   return (
     <div className="comment">
       <div className="comment-image-container">
@@ -9,9 +12,16 @@ const Comment = ({ comment }) => {
       <div className="comment-right-part">
         <div className="comment-info">
           <div className="comment-author">{comment.author}</div>
-          <div>{Date(comment.created_at)} </div>
+          <div>{new Date(comment.created_at).toUTCString()} </div>
         </div>
         <div className="comment-body">{comment.body}</div>
+        <div className="comment-buttons">
+          {canDelete && (
+            <div className="comment-delete" onClick={deleteComment}>
+              Delete
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

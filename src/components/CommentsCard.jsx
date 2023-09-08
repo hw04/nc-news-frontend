@@ -6,14 +6,29 @@ import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 
 const CommentsCard = () => {
+  const loggedInUser = "grumpy19";
   const { article_id } = useParams();
   const [comments, setComments] = useState([]);
+
   const addComment = (text) => {
     axios.post(
       `https://nc-news-czlb.onrender.com/api/articles/${article_id}/comments`,
-      { username: "grumpy19", body: text }
+      { username: loggedInUser, body: text }
     );
   };
+
+  const deleteComment = (comment.comment_id) => {
+    axios
+      .delete(
+        `https://nc-news-czlb.onrender.com/api/comments/${comment.comment_id}`
+      )
+      .then(
+        setComments((currentComments) => [
+          currentComments.splice(indexOf(comment.comment_id), 1),
+        ])
+      );
+  };
+
   useEffect(() => {
     axios
       .get(
@@ -21,7 +36,6 @@ const CommentsCard = () => {
       )
       .then((response) => {
         setComments(response.data);
-        console.log(response.data);
       });
   }, []);
 
@@ -32,7 +46,12 @@ const CommentsCard = () => {
       <CommentForm label="Submit comment" handleSubmit={addComment} />
       <div className="comments-container"></div>
       {comments.map((comment) => (
-        <Comment comment={comment} />
+        <Comment
+          comment={comment}
+          loggedInUser={loggedInUser}
+          deleteComment={deleteComment}
+          key={comment.comment_id}
+        />
       ))}
     </div>
   );

@@ -33,3 +33,9 @@ img {
   font-size: 18px;
   margin-top: 10px;
 }
+
+.comment-delete {
+  font-size: small;
+  color: rgb(49, 49, 49);
+  cursor: pointer;
+}
