@@ -58,11 +58,14 @@ const Homepage = () => {
     setArticles([...sortedArticles]);
   };
 
+  const loggedInUser = "grumpy19";
+
   return (
     <>
       <Navbar />
       <ul className="flex-container-homepage">
         <h2>Welcome to NC News™</h2>
+        You are currently logged in as: {loggedInUser}
         <Sorted
           sortByDate={sortByDate}
           sortByCommentHigh={sortByCommentHigh}
