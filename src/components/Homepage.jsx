@@ -18,14 +18,28 @@ const Homepage = () => {
 
   const sortByDate = () => {
     let sortedArticles = articles.sort((a, b) => {
-      return b.created_at - a.created_at;
+      let firstDate = new Date(a.created_at);
+      let secondDate = new Date(b.created_at);
+      if (firstDate > secondDate) {
+        return -1;
+      }
+      if (firstDate < secondDate) {
+        return 1;
+      }
     });
     setArticles([...sortedArticles]);
   };
 
-  const sortByCommentCount = () => {
+  const sortByCommentHigh = () => {
     let sortedArticles = articles.sort((a, b) => {
       return b.comment_count - a.comment_count;
+    });
+    setArticles([...sortedArticles]);
+  };
+
+  const sortByCommentLow = () => {
+    let sortedArticles = articles.sort((a, b) => {
+      return a.comment_count - b.comment_count;
     });
     setArticles([...sortedArticles]);
   };
@@ -44,7 +58,8 @@ const Homepage = () => {
         <h2>Welcome to NC News™</h2>
         <Sorted
           sortByDate={sortByDate}
-          sortByCommentCount={sortByCommentCount}
+          sortByCommentHigh={sortByCommentHigh}
+          sortByCommentLow={sortByCommentLow}
           sortByVotes={sortByVotes}
         />
         {articles.map((article) => (
