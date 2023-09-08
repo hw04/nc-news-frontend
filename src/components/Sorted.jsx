@@ -5,14 +5,18 @@ const Sorted = ({
   sortByDate,
   sortByCommentHigh,
   sortByCommentLow,
-  sortByVotes,
+  sortByVotesHigh,
+  sortByVotesLow,
 }) => {
   const [value, setValue] = useState("dateNew");
 
   const handleChange = (event) => {
     setValue(event.target.value);
     if (event.target.value === "votesHigh") {
-      sortByVotes(articles);
+      sortByVotesHigh(articles);
+    }
+    if (event.target.value === "votesLow") {
+      sortByVotesLow(articles);
     }
     if (event.target.value === "dateNew") {
       sortByDate(articles);
