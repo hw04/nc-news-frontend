@@ -44,9 +44,16 @@ const Homepage = () => {
     setArticles([...sortedArticles]);
   };
 
-  const sortByVotes = () => {
+  const sortByVotesHigh = () => {
     let sortedArticles = articles.sort((a, b) => {
       return b.votes - a.votes;
+    });
+    setArticles([...sortedArticles]);
+  };
+
+  const sortByVotesLow = () => {
+    let sortedArticles = articles.sort((a, b) => {
+      return a.votes - b.votes;
     });
     setArticles([...sortedArticles]);
   };
@@ -60,7 +67,8 @@ const Homepage = () => {
           sortByDate={sortByDate}
           sortByCommentHigh={sortByCommentHigh}
           sortByCommentLow={sortByCommentLow}
-          sortByVotes={sortByVotes}
+          sortByVotesHigh={sortByVotesHigh}
+          sortByVotesLow={sortByVotesLow}
         />
         {articles.map((article) => (
           <li key={article.article_id} className="flex-item-homepage">
