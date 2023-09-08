@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-const Sorted = ({ articles, sortByDate, sortByCommentCount, sortByVotes }) => {
+const Sorted = ({
+  articles,
+  sortByDate,
+  sortByCommentHigh,
+  sortByCommentLow,
+  sortByVotes,
+}) => {
   const [value, setValue] = useState("dateNew");
 
   const handleChange = (event) => {
@@ -11,17 +17,26 @@ const Sorted = ({ articles, sortByDate, sortByCommentCount, sortByVotes }) => {
     if (event.target.value === "dateNew") {
       sortByDate(articles);
     }
+    if (event.target.value === "dateOld") {
+      sortByDate(articles);
+    }
     if (event.target.value === "commentHigh") {
-      sortByCommentCount(articles);
+      sortByCommentHigh(articles);
+    }
+    if (event.target.value === "commentLow") {
+      sortByCommentLow(articles);
     }
   };
 
   return (
     <div className="sorted-container">
       <select value={value} onChange={handleChange}>
-        <option value="dateNew">Date (newest first)</option>
-        <option value="commentHigh">Comment count (high to low)</option>
+        <option value="dateNew">New</option>
+        <option value="dateOld">Old</option>
+        <option value="commentHigh">Most comments</option>
+        <option value="commentLow">Least comments</option>
         <option value="votesHigh">Votes (high to low)</option>
+        <option value="votesLow">Votes (low to high)</option>
       </select>
     </div>
   );
