@@ -3,7 +3,7 @@ import axios from "axios";
 
 const Comment = ({ comment, loggedInUser, deleteComment }) => {
   const canDelete = comment.author === loggedInUser;
-
+ 
   return (
     <div className="comment">
       <div className="comment-image-container">
@@ -17,7 +17,7 @@ const Comment = ({ comment, loggedInUser, deleteComment }) => {
         <div className="comment-body">{comment.body}</div>
         <div className="comment-buttons">
           {canDelete && (
-            <div className="comment-delete" onClick={deleteComment}>
+            <div className="comment-delete" onClick={() => deleteComment(comment)}>
               Delete
             </div>
           )}
