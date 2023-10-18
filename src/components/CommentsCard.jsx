@@ -9,23 +9,33 @@ const CommentsCard = () => {
   const loggedInUser = "grumpy19";
   const { article_id } = useParams();
   const [comments, setComments] = useState([]);
-
   const addComment = (text) => {
-    axios.post(
-      `https://nc-news-czlb.onrender.com/api/articles/${article_id}/comments`,
-      { username: loggedInUser, body: text }
-    );
+    axios
+      .post(
+        `https://nc-news-czlb.onrender.com/api/articles/${article_id}/comments`,
+        { username: loggedInUser, body: text }
+      )
+      .then((response) => {
+        setComments((currentComments) => {
+          return [response.data.comment, ...currentComments];
+        });
+      });
   };
 
-  const deleteComment = (comment.comment_id) => {
+  const deleteComment = (comment) => {
     axios
       .delete(
         `https://nc-news-czlb.onrender.com/api/comments/${comment.comment_id}`
       )
       .then(
-        setComments((currentComments) => [
-          currentComments.splice(indexOf(comment.comment_id), 1),
-        ])
+        setComments((currentComments) => {
+          return [
+            ...currentComments.filter(
+              (individualComment) =>
+                individualComment.comment_id !== comment.comment_id
+            ),
+          ];
+        })
       );
   };
 
