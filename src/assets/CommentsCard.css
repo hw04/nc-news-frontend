@@ -1,4 +1,4 @@
-.flex-container-comments {
+/* .flex-container-comments {
   text-align: center;
 
   display: flex;
@@ -10,7 +10,8 @@
   background-color: tomato;
   padding: 0px 100px 100px 100px;
   border-radius: 100px;
-}
+} */
+
 /*.comments-list {
   display: inline-block;
   text-align: center;
@@ -28,6 +29,6 @@
   background-color: white;
 }*/
 
-.post-comment-field {
+/* .post-comment-field {
   max-width: 90%;
-}
+} */

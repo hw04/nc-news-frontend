@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Select } from "@chakra-ui/react";
 
 const Sorted = ({
   articles,
@@ -33,16 +34,14 @@ const Sorted = ({
   };
 
   return (
-    <div className="sorted-container">
-      <select value={value} onChange={handleChange}>
-        <option value="dateNew">New</option>
-        <option value="dateOld">Old</option>
-        <option value="commentHigh">Most comments</option>
-        <option value="commentLow">Least comments</option>
-        <option value="votesHigh">Votes (high to low)</option>
-        <option value="votesLow">Votes (low to high)</option>
-      </select>
-    </div>
+    <Select value={value} onChange={handleChange} maxWidth="150px">
+      <option value="dateNew">New</option>
+      <option value="dateOld">Old</option>
+      <option value="commentHigh">Most comments</option>
+      <option value="commentLow">Least comments</option>
+      <option value="votesHigh">Votes (high to low)</option>
+      <option value="votesLow">Votes (low to high)</option>
+    </Select>
   );
 };
 

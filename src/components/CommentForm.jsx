@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../assets/CommentForm.css";
+import { Textarea, Button } from "@chakra-ui/react";
 
 const CommentForm = ({ label, handleSubmit }) => {
   const [text, setText] = useState("");
@@ -11,14 +12,12 @@ const CommentForm = ({ label, handleSubmit }) => {
   };
   return (
     <form onSubmit={onSubmit}>
-      <textarea
-        className="comment-form-textarea"
+      <Textarea
+        placeholder="Leave a comment..."
         value={text}
         onChange={(event) => setText(event.target.value)}
       />
-      <button className="comment-form-button" disabled={textDisabled}>
-        {label}
-      </button>
+      <Button disabled={textDisabled}>{label}</Button>
     </form>
   );
 };

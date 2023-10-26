@@ -1,9 +1,9 @@
 import "../assets/Comment.css";
-import axios from "axios";
+import { Button } from "@chakra-ui/react";
 
 const Comment = ({ comment, loggedInUser, deleteComment }) => {
   const canDelete = comment.author === loggedInUser;
- 
+
   return (
     <div className="comment">
       <div className="comment-image-container">
@@ -17,9 +17,7 @@ const Comment = ({ comment, loggedInUser, deleteComment }) => {
         <div className="comment-body">{comment.body}</div>
         <div className="comment-buttons">
           {canDelete && (
-            <div className="comment-delete" onClick={() => deleteComment(comment)}>
-              Delete
-            </div>
+            <Button onClick={() => deleteComment(comment)}> Delete</Button>
           )}
         </div>
       </div>

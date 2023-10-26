@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import "../assets/CommentsCard.css";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
+import { Heading } from "@chakra-ui/react";
 
 const CommentsCard = () => {
   const loggedInUser = "grumpy19";
@@ -50,11 +51,9 @@ const CommentsCard = () => {
   }, []);
 
   return (
-    <div className="flex-container-comments">
-      <h2>What people are saying...</h2>
-      <div className="post-comment-field">Leave a comment...</div>
+    <>
       <CommentForm label="Submit comment" handleSubmit={addComment} />
-      <div className="comments-container"></div>
+      <Heading as="h2">What people are saying...</Heading>
       {comments.map((comment) => (
         <Comment
           comment={comment}
@@ -63,7 +62,7 @@ const CommentsCard = () => {
           key={comment.comment_id}
         />
       ))}
-    </div>
+    </>
   );
 };
 
