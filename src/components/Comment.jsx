@@ -1,27 +1,42 @@
 import "../assets/Comment.css";
-import { Button } from "@chakra-ui/react";
+import {
+  Avatar,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  Text,
+  CardHeader,
+  Flex,
+  Heading,
+  Box,
+} from "@chakra-ui/react";
 
 const Comment = ({ comment, loggedInUser, deleteComment }) => {
   const canDelete = comment.author === loggedInUser;
 
   return (
-    <div className="comment">
-      <div className="comment-image-container">
-        <img src="https://t3.ftcdn.net/jpg/05/71/08/24/360_F_571082432_Qq45LQGlZsuby0ZGbrd79aUTSQikgcgc.jpg" />
-      </div>
-      <div className="comment-right-part">
-        <div className="comment-info">
-          <div className="comment-author">{comment.author}</div>
-          <div>{new Date(comment.created_at).toUTCString()} </div>
-        </div>
-        <div className="comment-body">{comment.body}</div>
-        <div className="comment-buttons">
-          {canDelete && (
-            <Button onClick={() => deleteComment(comment)}> Delete</Button>
-          )}
-        </div>
-      </div>
-    </div>
+    <Card marginBottom="15px">
+      <CardBody>
+        <Flex spacing="4">
+          <Flex flex="1" gap="4" alignItems="center">
+            <Avatar />
+            <Box>
+              <Heading size="sm">{comment.author}</Heading>
+              <Text color="blackAlpha.700">
+                {new Date(comment.created_at).toUTCString()}
+              </Text>
+              <Text>{comment.body}</Text>
+              {canDelete && (
+                <Button size="xs" onClick={() => deleteComment(comment)}>
+                  Delete
+                </Button>
+              )}
+            </Box>
+          </Flex>
+        </Flex>
+      </CardBody>
+    </Card>
   );
 };
 

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import "../assets/CommentsCard.css";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Box } from "@chakra-ui/react";
 
 const CommentsCard = () => {
   const loggedInUser = "grumpy19";
@@ -52,8 +52,12 @@ const CommentsCard = () => {
 
   return (
     <>
-      <CommentForm label="Submit comment" handleSubmit={addComment} />
-      <Heading as="h2">What people are saying...</Heading>
+      <Box marginBottom="20px">
+        <CommentForm handleSubmit={addComment} />
+      </Box>
+      <Heading size="lg" marginBottom="20px">
+        Comments ({comments.length})
+      </Heading>
       {comments.map((comment) => (
         <Comment
           comment={comment}
