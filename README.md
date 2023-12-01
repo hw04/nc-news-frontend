@@ -1,8 +1,19 @@
-# React + Vite
+# NC News - Front end
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the front end counterpart of the NC News application. 
 
-Currently, two official plugins are available:
+This front end was built using Vite + React.js. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Chakra UI has also been experimentally added for styling purposes.
+
+## Demo
+
+The application is hosted at https://hwnews.vercel.app/, you are free to try it out!
+
+## Setup
+
+Install the relevant packages:
+`npm i` 
+
+Run the app locally:
+`npm run dev`
